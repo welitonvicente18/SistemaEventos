@@ -43,40 +43,6 @@ login.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     method: 'head',
 })
 
-/**
-* @see \App\Http\Controllers\Admin\Auth\LoginController::store
-* @see app/Http/Controllers/Admin/Auth/LoginController.php:15
-* @route '/admin/login'
-*/
-export const store = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
-    url: store.url(options),
-    method: 'post',
-})
-
-store.definition = {
-    methods: ["post"],
-    url: '/admin/login',
-} satisfies RouteDefinition<["post"]>
-
-/**
-* @see \App\Http\Controllers\Admin\Auth\LoginController::store
-* @see app/Http/Controllers/Admin/Auth/LoginController.php:15
-* @route '/admin/login'
-*/
-store.url = (options?: RouteQueryOptions) => {
-    return store.definition.url + queryParams(options)
-}
-
-/**
-* @see \App\Http\Controllers\Admin\Auth\LoginController::store
-* @see app/Http/Controllers/Admin/Auth/LoginController.php:15
-* @route '/admin/login'
-*/
-store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
-    url: store.url(options),
-    method: 'post',
-})
-
-const LoginController = { login, store }
+const LoginController = { login }
 
 export default LoginController

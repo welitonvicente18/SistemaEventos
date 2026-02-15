@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin\Auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use Inertia\Inertia;
 
 class LoginController extends Controller
@@ -11,10 +10,5 @@ class LoginController extends Controller
     public function login()
     {
         return Inertia::render('admin/Login');
-    }
-
-    public function store()
-    {
-        echo 'login';
     }
 }

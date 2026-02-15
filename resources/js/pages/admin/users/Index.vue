@@ -7,12 +7,12 @@
         <template #header>
             <header class="py-10">
                 <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                    <h1 class="text-3xl font-bold tracking-tight text-white">Dashboard</h1>
+                    <h1 class="text-3xl font-bold tracking-tight text-white">Listagem de Usuário</h1>
                 </div>
             </header>
         </template>
         <div  class="rounded-lg bg-white px-5 py-6 shadow-sm sm:px-6 dark:bg-gray-800 dark:shadow-none dark:outline dark:-outline-offset-1 dark:outline-white/10">
-            asdfasfd
+            conteudo do Listagem de Usuário
         </div>
     </Authenticated_layout>
 </template>

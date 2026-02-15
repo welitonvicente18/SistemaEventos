@@ -1,7 +1,7 @@
 import { queryParams, type RouteQueryOptions, type RouteDefinition } from './../../../../../../wayfinder'
 /**
 * @see \App\Http\Controllers\Client\Auth\LoginController::login
-* @see app/Http/Controllers/Client/Auth/LoginController.php:10
+* @see app/Http/Controllers/Client/Auth/LoginController.php:11
 * @route '/client'
 */
 export const login = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -16,7 +16,7 @@ login.definition = {
 
 /**
 * @see \App\Http\Controllers\Client\Auth\LoginController::login
-* @see app/Http/Controllers/Client/Auth/LoginController.php:10
+* @see app/Http/Controllers/Client/Auth/LoginController.php:11
 * @route '/client'
 */
 login.url = (options?: RouteQueryOptions) => {
@@ -25,7 +25,7 @@ login.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\Client\Auth\LoginController::login
-* @see app/Http/Controllers/Client/Auth/LoginController.php:10
+* @see app/Http/Controllers/Client/Auth/LoginController.php:11
 * @route '/client'
 */
 login.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -35,7 +35,7 @@ login.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 
 /**
 * @see \App\Http\Controllers\Client\Auth\LoginController::login
-* @see app/Http/Controllers/Client/Auth/LoginController.php:10
+* @see app/Http/Controllers/Client/Auth/LoginController.php:11
 * @route '/client'
 */
 login.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({

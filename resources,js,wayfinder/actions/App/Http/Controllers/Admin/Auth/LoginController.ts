@@ -1,7 +1,7 @@
 import { queryParams, type RouteQueryOptions, type RouteDefinition } from './../../../../../../wayfinder'
 /**
 * @see \App\Http\Controllers\Admin\Auth\LoginController::login
-* @see app/Http/Controllers/Admin/Auth/LoginController.php:11
+* @see app/Http/Controllers/Admin/Auth/LoginController.php:10
 * @route '/admin'
 */
 export const login = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -16,7 +16,7 @@ login.definition = {
 
 /**
 * @see \App\Http\Controllers\Admin\Auth\LoginController::login
-* @see app/Http/Controllers/Admin/Auth/LoginController.php:11
+* @see app/Http/Controllers/Admin/Auth/LoginController.php:10
 * @route '/admin'
 */
 login.url = (options?: RouteQueryOptions) => {
@@ -25,7 +25,7 @@ login.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\Admin\Auth\LoginController::login
-* @see app/Http/Controllers/Admin/Auth/LoginController.php:11
+* @see app/Http/Controllers/Admin/Auth/LoginController.php:10
 * @route '/admin'
 */
 login.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -35,7 +35,7 @@ login.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 
 /**
 * @see \App\Http\Controllers\Admin\Auth\LoginController::login
-* @see app/Http/Controllers/Admin/Auth/LoginController.php:11
+* @see app/Http/Controllers/Admin/Auth/LoginController.php:10
 * @route '/admin'
 */
 login.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -43,40 +43,6 @@ login.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     method: 'head',
 })
 
-/**
-* @see \App\Http\Controllers\Admin\Auth\LoginController::store
-* @see app/Http/Controllers/Admin/Auth/LoginController.php:16
-* @route '/admin/login'
-*/
-export const store = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
-    url: store.url(options),
-    method: 'post',
-})
-
-store.definition = {
-    methods: ["post"],
-    url: '/admin/login',
-} satisfies RouteDefinition<["post"]>
-
-/**
-* @see \App\Http\Controllers\Admin\Auth\LoginController::store
-* @see app/Http/Controllers/Admin/Auth/LoginController.php:16
-* @route '/admin/login'
-*/
-store.url = (options?: RouteQueryOptions) => {
-    return store.definition.url + queryParams(options)
-}
-
-/**
-* @see \App\Http\Controllers\Admin\Auth\LoginController::store
-* @see app/Http/Controllers/Admin/Auth/LoginController.php:16
-* @route '/admin/login'
-*/
-store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
-    url: store.url(options),
-    method: 'post',
-})
-
-const LoginController = { login, store }
+const LoginController = { login }
 
 export default LoginController

@@ -28,5 +28,22 @@ return Application::configure(basePath: dirname(__DIR__))
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
-        //
+        $exceptions->respond(function (Response $response) {
+
+//            TODO- verificar redirecionado correto
+            if ($response->getStatusCode() === 429) {
+                return back()->withErrors('Muitas tentativas foram feiras, aguarde e tente novamente.');
+            }
+
+            if ($response->getStatusCode() === 500) {
+                return back()->withErrors('Erro interno, Solite atendimento com o suporte.');
+            }
+
+            if ($response->getStatusCode() === 419) {
+                return back()->with([
+                    'message' => 'The page expired, please try again.',
+                ]);
+            }
+            return $response;
+        });
     })->create();
