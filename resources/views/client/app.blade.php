@@ -1,4 +1,4 @@
-<html>
+<html class="h-full bg-white dark:bg-gray-900 scheme-light dark:scheme-dark">
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">

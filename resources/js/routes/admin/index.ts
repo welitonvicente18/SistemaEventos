@@ -1,5 +1,6 @@
 import { queryParams, type RouteQueryOptions, type RouteDefinition } from './../../wayfinder'
 import loginDf2c2a from './login'
+import esquecisenhaEd876a from './esquecisenha'
 import users from './users'
 /**
 * @see \App\Http\Controllers\Admin\Auth\LoginController::login
@@ -90,6 +91,50 @@ logout.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 })
 
 /**
+* @see \App\Http\Controllers\Admin\Auth\EsqueciSenhaController::esquecisenha
+* @see app/Http/Controllers/Admin/Auth/EsqueciSenhaController.php:13
+* @route '/admin/esquecisenha'
+*/
+export const esquecisenha = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: esquecisenha.url(options),
+    method: 'get',
+})
+
+esquecisenha.definition = {
+    methods: ["get","head"],
+    url: '/admin/esquecisenha',
+} satisfies RouteDefinition<["get","head"]>
+
+/**
+* @see \App\Http\Controllers\Admin\Auth\EsqueciSenhaController::esquecisenha
+* @see app/Http/Controllers/Admin/Auth/EsqueciSenhaController.php:13
+* @route '/admin/esquecisenha'
+*/
+esquecisenha.url = (options?: RouteQueryOptions) => {
+    return esquecisenha.definition.url + queryParams(options)
+}
+
+/**
+* @see \App\Http\Controllers\Admin\Auth\EsqueciSenhaController::esquecisenha
+* @see app/Http/Controllers/Admin/Auth/EsqueciSenhaController.php:13
+* @route '/admin/esquecisenha'
+*/
+esquecisenha.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: esquecisenha.url(options),
+    method: 'get',
+})
+
+/**
+* @see \App\Http\Controllers\Admin\Auth\EsqueciSenhaController::esquecisenha
+* @see app/Http/Controllers/Admin/Auth/EsqueciSenhaController.php:13
+* @route '/admin/esquecisenha'
+*/
+esquecisenha.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+    url: esquecisenha.url(options),
+    method: 'head',
+})
+
+/**
 * @see \App\Http\Controllers\Admin\DashboardController::__invoke
 * @see app/Http/Controllers/Admin/DashboardController.php:14
 * @route '/admin/dashboard'
@@ -136,6 +181,7 @@ dashboard.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 const admin = {
     login: Object.assign(login, loginDf2c2a),
     logout: Object.assign(logout, logout),
+    esquecisenha: Object.assign(esquecisenha, esquecisenhaEd876a),
     dashboard: Object.assign(dashboard, dashboard),
     users: Object.assign(users, users),
 }

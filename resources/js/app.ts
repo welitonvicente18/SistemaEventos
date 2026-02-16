@@ -6,6 +6,7 @@ import { createApp, h } from 'vue';
 import type { DefineComponent } from 'vue';
 import { createInertiaApp, Link } from '@inertiajs/vue3';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
+import VueTheMask from 'vue-the-mask';
 import { ZiggyVue } from 'ziggy-js';
 
 // On page load or when changing themes, best to add inline in `head` to avoid FOUC
@@ -21,6 +22,7 @@ void createInertiaApp({
         createApp({ render: () => h(App, props) })
             .use(plugin)
             .use(ZiggyVue)
+            .use(VueTheMask)
             .component('Link', Link)
             .mount(el);
     },

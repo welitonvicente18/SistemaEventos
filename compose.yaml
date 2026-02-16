@@ -24,6 +24,7 @@ services:
         depends_on:
             - mysql
             - pgsql
+            - mailpit
     mysql:
         image: 'mysql:8.4'
         ports:
@@ -74,6 +75,15 @@ services:
                 - '${DB_USERNAME}'
             retries: 3
             timeout: 5s
+    mailpit:
+        image: axllent/mailpit:latest
+        container_name: mailpit
+        ports:
+            - "8025:8025"   # Interface web
+            - "1025:1025"   # SMTP
+        networks:
+            - sail
+        restart: unless-stopped
 networks:
     sail:
         driver: bridge

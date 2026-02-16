@@ -5,6 +5,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -35,8 +36,8 @@ return Application::configure(basePath: dirname(__DIR__))
                 return back()->withErrors('Muitas tentativas foram feiras, aguarde e tente novamente.');
             }
 
-            if ($response->getStatusCode() === 500) {
-                return back()->withErrors('Erro interno, Solite atendimento com o suporte.');
+            if ($response->getStatusCode() === 500 && app()->isProduction()) {
+                return back()->withErrors('Erro interno, Solicite atendimento com o suporte.');
             }
 
             if ($response->getStatusCode() === 419) {

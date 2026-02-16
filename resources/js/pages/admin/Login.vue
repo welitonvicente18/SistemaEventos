@@ -12,7 +12,6 @@ const form = useForm({
 });
 
 const handleSubmit = () => {
-    // eslint-disable-next-line no-undef
     form.post(route('admin.login.do'), {
         preserveScroll: true,
         onError: (errors) => {
@@ -69,7 +68,7 @@ const handleSubmit = () => {
                                 <label for="remember"> Lembra-me</label>
                             </div>
                             <div class="text-sm">
-                                <a href="#" class="font-semibold text-indigo-400 hover:text-indigo-300">Esqueceu a senha?</a>
+                                <Link :href="route('password')" class="font-semibold text-indigo-400 hover:text-indigo-300">Esqueceu a senha?</Link>
                             </div>
                         </div>
                     </div>

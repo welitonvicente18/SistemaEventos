@@ -91,10 +91,10 @@ router.on('flash', (event) => {
                                                                 <UserPlusIcon class="size-6 text-gray-400 group-hover:text-white" />
                                                             </div>
                                                             <div>
-                                                                <a href="#" class="font-semibold text-white">
+                                                                <Link :href="route('admin.users.create')" class="font-semibold text-white">
                                                                     Criar Novo Usuário
                                                                     <span class="absolute inset-0"></span>
-                                                                </a>
+                                                                </Link>
                                                                 <p class="mt-1 text-gray-400">Cadastrar novo usuário</p>
                                                             </div>
                                                         </div>
@@ -164,21 +164,20 @@ router.on('flash', (event) => {
                                                 data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75
                                                 data-leave:ease-in dark:bg-gray-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10"
                                         >
-                                            <a
-                                                href="#"
-                                                class="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:outline-hidden dark:text-gray-300
-                                                    dark:focus:bg-white/5"
-                                            >Your profile</a
-                                            >
+                                            <Link
+                                                :href="route('admin.users.edit', 1)"
+                                                class="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:outline-hidden dark:text-gray-300 dark:focus:bg-white/5">
+                                                Minha Conta
+                                            </Link>
                                             <a
                                                 href="#"
                                                 class="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:outline-hidden dark:text-gray-300
                                                     dark:focus:bg-white/5"
                                             >Settings</a
                                             >
-                                            <Link :href="route('admin.logout')"
-                                                  class="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:outline-hidden dark:text-gray-300"
-                                            >Sair</Link>
+                                            <Link :href="route('admin.logout')" class="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:outline-hidden dark:text-gray-300">
+                                                Sair
+                                            </Link>
                                         </el-menu>
                                     </el-dropdown>
                                 </div>
@@ -275,7 +274,7 @@ router.on('flash', (event) => {
                         </div>
                         <div class="mt-3 space-y-1 px-2">
                             <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-white/5 hover:text-white">
-                                Your profile
+                                Minha conta
                             </a>
                             <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-white/5 hover:text-white">Settings
                             </a>
