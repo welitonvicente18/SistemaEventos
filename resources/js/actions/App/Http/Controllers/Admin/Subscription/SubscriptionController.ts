@@ -1,0 +1,162 @@
+import { queryParams, type RouteQueryOptions, type RouteDefinition, applyUrlDefaults } from './../../../../../../wayfinder'
+/**
+* @see \App\Http\Controllers\Admin\Subscription\SubscriptionController::store
+* @see app/Http/Controllers/Admin/Subscription/SubscriptionController.php:25
+* @route '/inscricao/{site}'
+*/
+export const store = (args: { site: string | number } | [site: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
+    url: store.url(args, options),
+    method: 'post',
+})
+
+store.definition = {
+    methods: ["post"],
+    url: '/inscricao/{site}',
+} satisfies RouteDefinition<["post"]>
+
+/**
+* @see \App\Http\Controllers\Admin\Subscription\SubscriptionController::store
+* @see app/Http/Controllers/Admin/Subscription/SubscriptionController.php:25
+* @route '/inscricao/{site}'
+*/
+store.url = (args: { site: string | number } | [site: string | number ] | string | number, options?: RouteQueryOptions) => {
+    if (typeof args === 'string' || typeof args === 'number') {
+        args = { site: args }
+    }
+
+    if (Array.isArray(args)) {
+        args = {
+            site: args[0],
+        }
+    }
+
+    args = applyUrlDefaults(args)
+
+    const parsedArgs = {
+        site: args.site,
+    }
+
+    return store.definition.url
+            .replace('{site}', parsedArgs.site.toString())
+            .replace(/\/+$/, '') + queryParams(options)
+}
+
+/**
+* @see \App\Http\Controllers\Admin\Subscription\SubscriptionController::store
+* @see app/Http/Controllers/Admin/Subscription/SubscriptionController.php:25
+* @route '/inscricao/{site}'
+*/
+store.post = (args: { site: string | number } | [site: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
+    url: store.url(args, options),
+    method: 'post',
+})
+
+/**
+* @see \App\Http\Controllers\Admin\Subscription\SubscriptionController::create
+* @see app/Http/Controllers/Admin/Subscription/SubscriptionController.php:17
+* @route '/admin/inscrito/novo'
+*/
+export const create = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: create.url(options),
+    method: 'get',
+})
+
+create.definition = {
+    methods: ["get","head"],
+    url: '/admin/inscrito/novo',
+} satisfies RouteDefinition<["get","head"]>
+
+/**
+* @see \App\Http\Controllers\Admin\Subscription\SubscriptionController::create
+* @see app/Http/Controllers/Admin/Subscription/SubscriptionController.php:17
+* @route '/admin/inscrito/novo'
+*/
+create.url = (options?: RouteQueryOptions) => {
+    return create.definition.url + queryParams(options)
+}
+
+/**
+* @see \App\Http\Controllers\Admin\Subscription\SubscriptionController::create
+* @see app/Http/Controllers/Admin/Subscription/SubscriptionController.php:17
+* @route '/admin/inscrito/novo'
+*/
+create.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: create.url(options),
+    method: 'get',
+})
+
+/**
+* @see \App\Http\Controllers\Admin\Subscription\SubscriptionController::create
+* @see app/Http/Controllers/Admin/Subscription/SubscriptionController.php:17
+* @route '/admin/inscrito/novo'
+*/
+create.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+    url: create.url(options),
+    method: 'head',
+})
+
+/**
+* @see \App\Http\Controllers\Admin\Subscription\SubscriptionController::edit
+* @see app/Http/Controllers/Admin/Subscription/SubscriptionController.php:42
+* @route '/admin/inscrito/{id}/editar'
+*/
+export const edit = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: edit.url(args, options),
+    method: 'get',
+})
+
+edit.definition = {
+    methods: ["get","head"],
+    url: '/admin/inscrito/{id}/editar',
+} satisfies RouteDefinition<["get","head"]>
+
+/**
+* @see \App\Http\Controllers\Admin\Subscription\SubscriptionController::edit
+* @see app/Http/Controllers/Admin/Subscription/SubscriptionController.php:42
+* @route '/admin/inscrito/{id}/editar'
+*/
+edit.url = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions) => {
+    if (typeof args === 'string' || typeof args === 'number') {
+        args = { id: args }
+    }
+
+    if (Array.isArray(args)) {
+        args = {
+            id: args[0],
+        }
+    }
+
+    args = applyUrlDefaults(args)
+
+    const parsedArgs = {
+        id: args.id,
+    }
+
+    return edit.definition.url
+            .replace('{id}', parsedArgs.id.toString())
+            .replace(/\/+$/, '') + queryParams(options)
+}
+
+/**
+* @see \App\Http\Controllers\Admin\Subscription\SubscriptionController::edit
+* @see app/Http/Controllers/Admin/Subscription/SubscriptionController.php:42
+* @route '/admin/inscrito/{id}/editar'
+*/
+edit.get = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: edit.url(args, options),
+    method: 'get',
+})
+
+/**
+* @see \App\Http\Controllers\Admin\Subscription\SubscriptionController::edit
+* @see app/Http/Controllers/Admin/Subscription/SubscriptionController.php:42
+* @route '/admin/inscrito/{id}/editar'
+*/
+edit.head = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+    url: edit.url(args, options),
+    method: 'head',
+})
+
+const SubscriptionController = { store, create, edit }
+
+export default SubscriptionController
