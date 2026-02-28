@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Authentication_layout from '@/pages/admin/layouts/Authentication_layout.vue';
+import Authentication_layout from '@/pages/layouts/Authentication_layout.vue';
 import { useForm } from '@inertiajs/vue3'; // agora funciona
 import { toast } from 'vue-sonner';
 
@@ -68,7 +68,7 @@ const handleSubmit = () => {
                                 <label for="remember"> Lembra-me</label>
                             </div>
                             <div class="text-sm">
-                                <Link :href="route('password')" class="font-semibold text-indigo-400 hover:text-indigo-300">Esqueceu a senha?</Link>
+                                <Link :href="route('admin.password')" class="font-semibold text-indigo-400 hover:text-indigo-300">Esqueceu a senha?</Link>
                             </div>
                         </div>
                     </div>

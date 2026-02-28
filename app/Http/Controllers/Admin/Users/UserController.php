@@ -26,7 +26,6 @@ class UserController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|email',
             'fone' => 'nullable|max:20',
-            'fone' => 'nullable|max:20',
             'password' => 'nullable|max:20',
             'avatar' => 'nullable|image|mimes:jpeg,jpg,png|max:2048',
         ]);
@@ -59,7 +58,6 @@ class UserController extends Controller
         } else {
             unset($userValidate['password']); // remove para não atualizar a coluna
         }
-
 
         if ($request->file('avatar')) {
             $fileName = preg_replace('/[^A-Za-z]/', '', $request->name) . '_' . date('Y-m-d_H:i:s') . '.' . $request->file('avatar')->getClientOriginalExtension();

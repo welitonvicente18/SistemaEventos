@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import Authenticated_layout from '@/pages/admin/layouts/Authenticated_layout.vue';
-import { PencilSquareIcon, XCircleIcon } from '@heroicons/vue/24/solid';
+import Authenticated_layout from '@/pages/layouts/Authenticated_layout.vue';
+import { PencilSquareIcon, XCircleIcon } from '@heroicons/vue/24/outline';
 import { PlusCircleIcon } from '@heroicons/vue/24/outline';
 import { toast } from 'vue-sonner';
 import { useForm } from '@inertiajs/vue3';
@@ -34,12 +34,12 @@ function deletarUser(id){
     <Authenticated_layout>
         <template #header>
             <header class="py-10">
-                <div class="flex justify-between">
-                    <div class="mx-auto max-w-7xl">
+                <div class="flex justify-between mx-auto  max-w-7xl">
+                    <div class="px-4 sm:px-6 lg:px-8">
                         <h1 class="text-3xl font-bold tracking-tight text-white">Listagem de Usuário</h1>
                     </div>
-                    <div class="mx-auto max-w-7xl justify-items-end">
-                        <Link :href="route('admin.users.create')" class="rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 flex items-center gap-2">
+                    <div class="px-4 sm:px-6 lg:px-8 justify-items-end">
+                        <Link :href="route('admin.users.create')" class="rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 flex items-center gap-2">
                             <PlusCircleIcon class="h-6 w-6 text-white" />
                             Adicionar
                         </Link>
@@ -73,11 +73,17 @@ function deletarUser(id){
                         </td>
                         <td class="px-6 py-4 text-sm text-gray-600 dark:text-gray-300">
                             <div class="flex items-center gap-3">
-                                <Link :href="route('admin.users.edit', user.id)" aria-label="Editar Usuário" title="Editar Usuário">
-                                    <PencilSquareIcon class="size-6 text-gray-400 group-hover:text-white" />
+                                <Link :href="route('admin.users.edit', user.id)" aria-label="Editar Usuário" title="Editar Usuário"
+                                      class="justify-items-center rounded-md bg-indigo-600 px-1 py-1 text-sm font-semibold text-white
+                                                    hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2
+                                                    focus-visible:outline-indigo-300">
+                                    <PencilSquareIcon class="size-7 text-white group-hover:text-white" />
                                 </Link>
-                                <Link @click="deletarUser(user.id)" aria-label="Editar Usuário" title="Editar Usuário">
-                                    <XCircleIcon class="size-6 text-red-400 group-hover:text-white" />
+                                <Link @click="deletarUser(user.id)" aria-label="Editar Usuário" title="Editar Usuário"
+                                      class="justify-items-center rounded-md bg-red-500 px-1 py-1 text-sm font-semibold text-white
+                                                    hover:bg-red-400 focus-visible:outline-2 focus-visible:outline-offset-2
+                                                    focus-visible:outline-red-300">
+                                    <XCircleIcon class="size-7 text-white group-hover:text-white" />
                                 </Link>
                             </div>
                         </td>

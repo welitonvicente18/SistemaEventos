@@ -6,8 +6,9 @@ import { createApp, h } from 'vue';
 import type { DefineComponent } from 'vue';
 import { createInertiaApp, Link } from '@inertiajs/vue3';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
-import VueTheMask from 'vue-the-mask';
+import VueTheMask from 'vue-the-mask'
 import { ZiggyVue } from 'ziggy-js';
+import { formatDatePtBr } from './helpers/formaDate';
 
 // On page load or when changing themes, best to add inline in `head` to avoid FOUC
 document.documentElement.classList.toggle(
@@ -23,6 +24,12 @@ void createInertiaApp({
             .use(plugin)
             .use(ZiggyVue)
             .use(VueTheMask)
+            .mixin({
+                // Registrando globalmente a função $formatDate
+                methods: {
+                    $formatDate: formatDatePtBr
+                }
+            })
             .component('Link', Link)
             .mount(el);
     },

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Authentication_layout from '@/pages/admin/layouts/Authentication_layout.vue';
+import Authentication_layout from '@/pages/layouts/Authentication_layout.vue';
 import { useForm } from '@inertiajs/vue3';
 import { toast } from 'vue-sonner';
 

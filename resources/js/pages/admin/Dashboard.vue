@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    import Authenticated_layout from '@/pages/admin/layouts/Authenticated_layout.vue';
+    import Authenticated_layout from '@/pages/layouts/Authenticated_layout.vue';
 </script>
 
 <template>

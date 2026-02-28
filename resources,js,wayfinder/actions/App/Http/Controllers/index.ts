@@ -1,11 +1,9 @@
-import ResetPassword from './ResetPassword'
+import Public from './Public'
 import Admin from './Admin'
-import Client from './Client'
 
 const Controllers = {
-    ResetPassword: Object.assign(ResetPassword, ResetPassword),
+    Public: Object.assign(Public, Public),
     Admin: Object.assign(Admin, Admin),
-    Client: Object.assign(Client, Client),
 }
 
 export default Controllers

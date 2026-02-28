@@ -1,7 +1,53 @@
 import { queryParams, type RouteQueryOptions, type RouteDefinition } from './../../wayfinder'
 import loginDf2c2a from './login'
-import esquecisenhaEd876a from './esquecisenha'
+import password9cfa90 from './password'
 import users from './users'
+import event from './event'
+import subscription from './subscription'
+/**
+* @see \App\Http\Controllers\Admin\DashboardController::__invoke
+* @see app/Http/Controllers/Admin/DashboardController.php:14
+* @route '/admin/dashboard'
+*/
+export const dashboard = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: dashboard.url(options),
+    method: 'get',
+})
+
+dashboard.definition = {
+    methods: ["get","head"],
+    url: '/admin/dashboard',
+} satisfies RouteDefinition<["get","head"]>
+
+/**
+* @see \App\Http\Controllers\Admin\DashboardController::__invoke
+* @see app/Http/Controllers/Admin/DashboardController.php:14
+* @route '/admin/dashboard'
+*/
+dashboard.url = (options?: RouteQueryOptions) => {
+    return dashboard.definition.url + queryParams(options)
+}
+
+/**
+* @see \App\Http\Controllers\Admin\DashboardController::__invoke
+* @see app/Http/Controllers/Admin/DashboardController.php:14
+* @route '/admin/dashboard'
+*/
+dashboard.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: dashboard.url(options),
+    method: 'get',
+})
+
+/**
+* @see \App\Http\Controllers\Admin\DashboardController::__invoke
+* @see app/Http/Controllers/Admin/DashboardController.php:14
+* @route '/admin/dashboard'
+*/
+dashboard.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+    url: dashboard.url(options),
+    method: 'head',
+})
+
 /**
 * @see \App\Http\Controllers\Admin\Auth\LoginController::login
 * @see app/Http/Controllers/Admin/Auth/LoginController.php:10
@@ -91,99 +137,57 @@ logout.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 })
 
 /**
-* @see \App\Http\Controllers\Admin\Auth\EsqueciSenhaController::esquecisenha
-* @see app/Http/Controllers/Admin/Auth/EsqueciSenhaController.php:13
+* @see \App\Http\Controllers\Admin\Auth\ResetPassword::password
+* @see app/Http/Controllers/Admin/Auth/ResetPassword.php:16
 * @route '/admin/esquecisenha'
 */
-export const esquecisenha = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
-    url: esquecisenha.url(options),
+export const password = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: password.url(options),
     method: 'get',
 })
 
-esquecisenha.definition = {
+password.definition = {
     methods: ["get","head"],
     url: '/admin/esquecisenha',
 } satisfies RouteDefinition<["get","head"]>
 
 /**
-* @see \App\Http\Controllers\Admin\Auth\EsqueciSenhaController::esquecisenha
-* @see app/Http/Controllers/Admin/Auth/EsqueciSenhaController.php:13
+* @see \App\Http\Controllers\Admin\Auth\ResetPassword::password
+* @see app/Http/Controllers/Admin/Auth/ResetPassword.php:16
 * @route '/admin/esquecisenha'
 */
-esquecisenha.url = (options?: RouteQueryOptions) => {
-    return esquecisenha.definition.url + queryParams(options)
+password.url = (options?: RouteQueryOptions) => {
+    return password.definition.url + queryParams(options)
 }
 
 /**
-* @see \App\Http\Controllers\Admin\Auth\EsqueciSenhaController::esquecisenha
-* @see app/Http/Controllers/Admin/Auth/EsqueciSenhaController.php:13
+* @see \App\Http\Controllers\Admin\Auth\ResetPassword::password
+* @see app/Http/Controllers/Admin/Auth/ResetPassword.php:16
 * @route '/admin/esquecisenha'
 */
-esquecisenha.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
-    url: esquecisenha.url(options),
+password.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: password.url(options),
     method: 'get',
 })
 
 /**
-* @see \App\Http\Controllers\Admin\Auth\EsqueciSenhaController::esquecisenha
-* @see app/Http/Controllers/Admin/Auth/EsqueciSenhaController.php:13
+* @see \App\Http\Controllers\Admin\Auth\ResetPassword::password
+* @see app/Http/Controllers/Admin/Auth/ResetPassword.php:16
 * @route '/admin/esquecisenha'
 */
-esquecisenha.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
-    url: esquecisenha.url(options),
-    method: 'head',
-})
-
-/**
-* @see \App\Http\Controllers\Admin\DashboardController::__invoke
-* @see app/Http/Controllers/Admin/DashboardController.php:14
-* @route '/admin/dashboard'
-*/
-export const dashboard = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
-    url: dashboard.url(options),
-    method: 'get',
-})
-
-dashboard.definition = {
-    methods: ["get","head"],
-    url: '/admin/dashboard',
-} satisfies RouteDefinition<["get","head"]>
-
-/**
-* @see \App\Http\Controllers\Admin\DashboardController::__invoke
-* @see app/Http/Controllers/Admin/DashboardController.php:14
-* @route '/admin/dashboard'
-*/
-dashboard.url = (options?: RouteQueryOptions) => {
-    return dashboard.definition.url + queryParams(options)
-}
-
-/**
-* @see \App\Http\Controllers\Admin\DashboardController::__invoke
-* @see app/Http/Controllers/Admin/DashboardController.php:14
-* @route '/admin/dashboard'
-*/
-dashboard.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
-    url: dashboard.url(options),
-    method: 'get',
-})
-
-/**
-* @see \App\Http\Controllers\Admin\DashboardController::__invoke
-* @see app/Http/Controllers/Admin/DashboardController.php:14
-* @route '/admin/dashboard'
-*/
-dashboard.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
-    url: dashboard.url(options),
+password.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+    url: password.url(options),
     method: 'head',
 })
 
 const admin = {
+    dashboard: Object.assign(dashboard, dashboard),
     login: Object.assign(login, loginDf2c2a),
     logout: Object.assign(logout, logout),
-    esquecisenha: Object.assign(esquecisenha, esquecisenhaEd876a),
-    dashboard: Object.assign(dashboard, dashboard),
+    password: Object.assign(password, password9cfa90),
     users: Object.assign(users, users),
+    event: Object.assign(event, event),
+    subscription: Object.assign(subscription, subscription),
 }
 
 export default admin

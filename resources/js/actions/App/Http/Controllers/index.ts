@@ -1,9 +1,9 @@
+import Public from './Public'
 import Admin from './Admin'
-import Client from './Client'
 
 const Controllers = {
+    Public: Object.assign(Public, Public),
     Admin: Object.assign(Admin, Admin),
-    Client: Object.assign(Client, Client),
 }
 
 export default Controllers

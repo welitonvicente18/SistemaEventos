@@ -1,19 +1,18 @@
 <?php
 
-use App\Http\Controllers\ResetPassword;
+use App\Http\Controllers\Admin\Subscription\SubscriptionController;
+use App\Http\Controllers\Public\EventAcess\ConfimationSubscripttionController;
+use App\Http\Controllers\Public\EventAcess\EventAcessController;
 use Illuminate\Support\Facades\Route;
-
-Route::get('/teste', function () {
-   return \Inertia\Inertia::render('Teste', []);
-});
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/esquecisenha', [ResetPassword::class, 'index'])->name('password');
-Route::post('/esquecisenha', [ResetPassword::class, 'reset'])->name('password.reset');
+Route::get('/inscricao/{site}', EventAcessController::class)->name('eventAcess.index');
+Route::post('/inscricao/store', [SubscriptionController::class, 'store'])->name('eventSubscription.store');
+Route::get('/inscricao/{id}/confirmacao', [SubscriptionController::class, 'confirmation'])->name('subscription.confirmation');
+Route::get('/inscricao/cancelar/{tokem}', [SubscriptionController::class, 'cancel'])->name('subscription.cancel');
 
 require_once 'admin.php';
-require_once 'client.php';
 require_once 'public.php';
