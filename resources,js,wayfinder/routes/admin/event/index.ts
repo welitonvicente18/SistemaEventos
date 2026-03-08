@@ -107,7 +107,7 @@ show.head = (args: { id: string | number } | [id: string | number ] | string | n
 
 /**
 * @see \App\Http\Controllers\Admin\Event\EventController::create
-* @see app/Http/Controllers/Admin/Event/EventController.php:52
+* @see app/Http/Controllers/Admin/Event/EventController.php:55
 * @route '/admin/evento/novo'
 */
 export const create = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -122,7 +122,7 @@ create.definition = {
 
 /**
 * @see \App\Http\Controllers\Admin\Event\EventController::create
-* @see app/Http/Controllers/Admin/Event/EventController.php:52
+* @see app/Http/Controllers/Admin/Event/EventController.php:55
 * @route '/admin/evento/novo'
 */
 create.url = (options?: RouteQueryOptions) => {
@@ -131,7 +131,7 @@ create.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\Admin\Event\EventController::create
-* @see app/Http/Controllers/Admin/Event/EventController.php:52
+* @see app/Http/Controllers/Admin/Event/EventController.php:55
 * @route '/admin/evento/novo'
 */
 create.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -141,7 +141,7 @@ create.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 
 /**
 * @see \App\Http\Controllers\Admin\Event\EventController::create
-* @see app/Http/Controllers/Admin/Event/EventController.php:52
+* @see app/Http/Controllers/Admin/Event/EventController.php:55
 * @route '/admin/evento/novo'
 */
 create.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -151,7 +151,7 @@ create.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
 /**
 * @see \App\Http\Controllers\Admin\Event\EventController::store
-* @see app/Http/Controllers/Admin/Event/EventController.php:60
+* @see app/Http/Controllers/Admin/Event/EventController.php:63
 * @route '/admin/evento/novo'
 */
 export const store = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
@@ -166,7 +166,7 @@ store.definition = {
 
 /**
 * @see \App\Http\Controllers\Admin\Event\EventController::store
-* @see app/Http/Controllers/Admin/Event/EventController.php:60
+* @see app/Http/Controllers/Admin/Event/EventController.php:63
 * @route '/admin/evento/novo'
 */
 store.url = (options?: RouteQueryOptions) => {
@@ -175,7 +175,7 @@ store.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\Admin\Event\EventController::store
-* @see app/Http/Controllers/Admin/Event/EventController.php:60
+* @see app/Http/Controllers/Admin/Event/EventController.php:63
 * @route '/admin/evento/novo'
 */
 store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
@@ -185,7 +185,7 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
 
 /**
 * @see \App\Http\Controllers\Admin\Event\EventController::edit
-* @see app/Http/Controllers/Admin/Event/EventController.php:90
+* @see app/Http/Controllers/Admin/Event/EventController.php:93
 * @route '/admin/evento/{id}/editar'
 */
 export const edit = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -200,7 +200,7 @@ edit.definition = {
 
 /**
 * @see \App\Http\Controllers\Admin\Event\EventController::edit
-* @see app/Http/Controllers/Admin/Event/EventController.php:90
+* @see app/Http/Controllers/Admin/Event/EventController.php:93
 * @route '/admin/evento/{id}/editar'
 */
 edit.url = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions) => {
@@ -227,7 +227,7 @@ edit.url = (args: { id: string | number } | [id: string | number ] | string | nu
 
 /**
 * @see \App\Http\Controllers\Admin\Event\EventController::edit
-* @see app/Http/Controllers/Admin/Event/EventController.php:90
+* @see app/Http/Controllers/Admin/Event/EventController.php:93
 * @route '/admin/evento/{id}/editar'
 */
 edit.get = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -237,7 +237,7 @@ edit.get = (args: { id: string | number } | [id: string | number ] | string | nu
 
 /**
 * @see \App\Http\Controllers\Admin\Event\EventController::edit
-* @see app/Http/Controllers/Admin/Event/EventController.php:90
+* @see app/Http/Controllers/Admin/Event/EventController.php:93
 * @route '/admin/evento/{id}/editar'
 */
 edit.head = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -247,7 +247,7 @@ edit.head = (args: { id: string | number } | [id: string | number ] | string | n
 
 /**
 * @see \App\Http\Controllers\Admin\Event\EventController::update
-* @see app/Http/Controllers/Admin/Event/EventController.php:100
+* @see app/Http/Controllers/Admin/Event/EventController.php:103
 * @route '/admin/evento/{id}/editar'
 */
 export const update = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
@@ -262,7 +262,7 @@ update.definition = {
 
 /**
 * @see \App\Http\Controllers\Admin\Event\EventController::update
-* @see app/Http/Controllers/Admin/Event/EventController.php:100
+* @see app/Http/Controllers/Admin/Event/EventController.php:103
 * @route '/admin/evento/{id}/editar'
 */
 update.url = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions) => {
@@ -289,7 +289,7 @@ update.url = (args: { id: string | number } | [id: string | number ] | string | 
 
 /**
 * @see \App\Http\Controllers\Admin\Event\EventController::update
-* @see app/Http/Controllers/Admin/Event/EventController.php:100
+* @see app/Http/Controllers/Admin/Event/EventController.php:103
 * @route '/admin/evento/{id}/editar'
 */
 update.put = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
@@ -299,7 +299,7 @@ update.put = (args: { id: string | number } | [id: string | number ] | string | 
 
 /**
 * @see \App\Http\Controllers\Admin\Event\EventController::destroy
-* @see app/Http/Controllers/Admin/Event/EventController.php:130
+* @see app/Http/Controllers/Admin/Event/EventController.php:133
 * @route '/admin/evento/{id}/deletar'
 */
 export const destroy = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
@@ -314,7 +314,7 @@ destroy.definition = {
 
 /**
 * @see \App\Http\Controllers\Admin\Event\EventController::destroy
-* @see app/Http/Controllers/Admin/Event/EventController.php:130
+* @see app/Http/Controllers/Admin/Event/EventController.php:133
 * @route '/admin/evento/{id}/deletar'
 */
 destroy.url = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions) => {
@@ -341,7 +341,7 @@ destroy.url = (args: { id: string | number } | [id: string | number ] | string |
 
 /**
 * @see \App\Http\Controllers\Admin\Event\EventController::destroy
-* @see app/Http/Controllers/Admin/Event/EventController.php:130
+* @see app/Http/Controllers/Admin/Event/EventController.php:133
 * @route '/admin/evento/{id}/deletar'
 */
 destroy.put = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'put'> => ({

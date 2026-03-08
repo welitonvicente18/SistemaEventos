@@ -9,8 +9,6 @@ const { events } = defineProps({
     events: Object,
 });
 
-const baseUrl = import.meta.env.VITE_APP_URL
-
 const form = useForm({
     id: '',
 });
@@ -84,9 +82,12 @@ function deletarEvent(id) {
                         <td class="px-6 py-4 text-sm font-medium text-gray-900 dark:text-white">
                             <div>
                                 <div class="text-2xl">{{ event.name }}</div>
-                                <div class="text-1xl mt-2 w-50 rounded-lg bg-slate-500 px-5 py-1">
-                                    Inscrições: {{ event.total_subscriptions }} / {{ event.capacity }}
+                                <div class="text-1xl mt-2 w-50 rounded-lg bg-slate-500 px-2 py-1">
+                                    Inscrições: {{ event.subscriptions_count }} / {{ event.capacity }}
                                 </div>
+                                <p class="text-1xl mt-2 w-full py-1 text-gray-400">
+                                    Criado por: {{ event.user.name }}
+                                </p>
                             </div>
                         </td>
                         <td class="px-6 py-4 text-sm font-medium text-gray-900 dark:text-white">
@@ -105,7 +106,7 @@ function deletarEvent(id) {
                         </td>
                         <td class="px-6 py-4 text-center text-sm text-gray-600 dark:text-gray-300">
                             <a
-                                :href="`${baseUrl}inscricao/${event.site}`"
+                                :href="`/inscricao/${event.site}`"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 class="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-md

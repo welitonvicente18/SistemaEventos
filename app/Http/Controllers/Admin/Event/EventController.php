@@ -17,11 +17,11 @@ class EventController extends Controller
      */
     public function index()
     {
-        $events = DB::table('events')
-                 ->leftJoin('subscriptions', 'events.id', '=', 'subscriptions.event_id')
-                 ->select('events.*',DB::raw('COUNT(subscriptions.id) as total_subscriptions'))
-                 ->groupBy('events.id')
-                 ->get();
+      $events = Event::query()->with('user')
+                                ->withCount('subscriptions')
+                                ->whereNull('deleted_at')
+                                ->withCount('subscriptions')
+                                ->get();
 
         return Inertia::render('admin/event/Index', ['events' => $events]);
     }
@@ -35,7 +35,10 @@ class EventController extends Controller
         $imageEvent = $event->image ? asset('storage/' . $event->image) : null;
 
         // Consultar inscritos
-        $subscriptions = Subscription::where('event_id', $id)->orderBy('name')->get();
+        $subscriptions = Subscription::where('event_id', $id)
+                                            ->whereNull('deleted_at')
+                                            ->orderBy('name')
+                                            ->get();
 
         return Inertia::render('admin/event/Show',
             [
@@ -75,7 +78,7 @@ class EventController extends Controller
 
         if ($request->file('image')) {
             $fileName = preg_replace('/[^A-Za-z]/', '', $request->name) . '_' . date('Y-m-d_H:i:s') . '.' . $request->file('image')->getClientOriginalExtension();
-            $validate['image'] = $request->file('image')->storeAs('/event/img', $fileName);
+            $validate['image'] = $request->file('image')->storeAs('/event/img', $fileName, 'public');
         }
 
         $event->create($validate);
@@ -115,7 +118,7 @@ class EventController extends Controller
 
         if ($request->file('image')) {
             $fileName = preg_replace('/[^A-Za-z]/', '', $request->name) . '_' . date('Y-m-d_H:i:s') . '.' . $request->file('image')->getClientOriginalExtension();
-            $validate['image'] = $request->file('image')->storeAs('/event/img', $fileName);
+            $validate['image'] = $request->file('image')->storeAs('/event/img', $fileName, 'public');
         }
 
         $event->update($validate);

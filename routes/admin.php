@@ -1,9 +1,5 @@
 <?php
 
-use App\Http\Controllers\Admin\Auth\AuthenticateController;
-use App\Http\Controllers\Admin\Auth\LoginController;
-use App\Http\Controllers\Admin\Auth\LogoutController;
-use App\Http\Controllers\Admin\Auth\ResetPassword;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\Event\EventController;
 use App\Http\Controllers\Admin\Subscription\SubscriptionController;
@@ -15,15 +11,6 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin'], function () {
     Route::group(['middleware' => ['auth']], function () {
         Route::get('/dashboard', DashboardController::class)->name('dashboard');
     });
-
-    Route::get('/', [LoginController::class, 'login'])->name('login');
-    Route::post('/authenticate', AuthenticateController::class)
-//        ->middleware('throttle:5,5') // middleware referente ao número máximo de tentativas
-        ->name('login.do');
-    Route::get('/logout', LogoutController::class)->name('logout');
-
-    Route::get('/esquecisenha', [ResetPassword::class, 'index'])->name('password');
-    Route::post('/esquecisenha', [ResetPassword::class, 'reset'])->name('password.reset');
 
     // Users
     Route::get('/usuario', [UserController::class, 'index'])->name('users.index');
@@ -45,6 +32,6 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin'], function () {
     // Subscription
     Route::get('/inscrito/novo', [SubscriptionController::class, 'create'])->name('subscription.create');
     Route::get('/inscrito/{id}/editar', [SubscriptionController::class, 'edit'])->name('subscription.edit');
-//    Route::get('/evento/{id}/gestao', [EventController::class, 'show'])->name('event.show');
-//    Route::post('/evento/novo', [EventController::class, 'store'])->name('event.store');
+    Route::put('/inscrito/{id}/editar', [SubscriptionController::class, 'update'])->name('subscription.update');
+    Route::put('/inscrito/{id}/deletar', [SubscriptionController::class, 'destroy'])->name('subscription.destroy');
 });

@@ -58,15 +58,7 @@ const props = defineProps({
                         </div>
                         <div class="mt-6 text-lg/8 text-pretty text-gray-300">
                             <a
-                                href="#"
-                                class="flex w-100 items-center gap-2 rounded-md bg-green-500 px-3 py-2 text-sm font-semibold text-white
-                                    focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600"
-                            >
-                                <CalendarIcon class="h-6 w-6 text-white" />
-                                Adicionar ao Calendário
-                            </a>
-                            <a
-                                href="{{props.event.site}}" target="_blank"
+                                :href="`/inscricao/${props.event.site}`" target="_blank"
                                 class="mt-5 flex w-100 items-center gap-2 rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white
                                     focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                             >

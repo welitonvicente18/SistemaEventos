@@ -37,6 +37,6 @@ class ResetPassword extends Controller
 
         Mail::to($user->email)->send(new ResetPasswordMail($user->name, $newPassword));
 
-        return back()->with('success', 'Nova senha enviada por email.');
+        return redirect()->route('login')->with('success', 'Nova senha enviada por email.');
     }
 }

@@ -3,11 +3,10 @@
 namespace App\Http\Controllers\Admin\Subscription;
 
 use App\Http\Controllers\Controller;
-use App\Mail\CreateSubscriptiomMail;
+use App\Jobs\CreateSubscriptionMail;
 use App\Models\Event;
 use App\Models\Subscription;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 use Inertia\Inertia;
 
@@ -31,7 +30,7 @@ class SubscriptionController extends Controller
 
         // Verificar capacidade
         if ($this->EventIsFull($request->event_id)) {
-//            return redirect()->back()->withErrors(['error', 'Este evento atingiu sua capacidade máxima']);
+            //            return redirect()->back()->withErrors(['error', 'Este evento atingiu sua capacidade máxima']);
         }
 
         $validated = $request->validate([
@@ -56,7 +55,7 @@ class SubscriptionController extends Controller
         $idSubscription = $subscription->save();
 
         // Enviar email de confirmação
-        Mail::to($validated['email'])->send(new CreateSubscriptiomMail($validated['name'], $event));
+        CreateSubscriptionMail::dispatch($validated, $event)->OnQueue('emails_subscription');
 
         return redirect()->route('subscription.confirmation', $idSubscription)->with('success', 'Cadastro realizado com sucesso');
     }
@@ -106,7 +105,18 @@ class SubscriptionController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $subscription = Subscription::findOrFail($id);
+
+        $validate = $request->validate([
+            'event_id' => 'required|integer',
+            'name' => 'required',
+            'email' => 'required|email|unique:subscriptions,email,' . $id,
+            'phone' => 'nullable|string|max:20',
+        ]);
+
+        $subscription->update($validate);
+
+        return redirect()->route('admin.event.show', $validate['event_id'])->with('success', 'Atualizado com sucesso');
     }
 
     /**
@@ -114,6 +124,9 @@ class SubscriptionController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $user = Subscription::findOrFail($id);
+        $user->destroy($id);
+
+        return redirect()->route('admin.event.show', $user->event_id)->with('success', 'Excluido com sucesso');
     }
 }

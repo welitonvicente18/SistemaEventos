@@ -1,7 +1,7 @@
 import { queryParams, type RouteQueryOptions, type RouteDefinition, applyUrlDefaults } from './../../wayfinder'
 /**
 * @see \App\Http\Controllers\Admin\Subscription\SubscriptionController::confirmation
-* @see app/Http/Controllers/Admin/Subscription/SubscriptionController.php:64
+* @see app/Http/Controllers/Admin/Subscription/SubscriptionController.php:63
 * @route '/inscricao/{id}/confirmacao'
 */
 export const confirmation = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -16,7 +16,7 @@ confirmation.definition = {
 
 /**
 * @see \App\Http\Controllers\Admin\Subscription\SubscriptionController::confirmation
-* @see app/Http/Controllers/Admin/Subscription/SubscriptionController.php:64
+* @see app/Http/Controllers/Admin/Subscription/SubscriptionController.php:63
 * @route '/inscricao/{id}/confirmacao'
 */
 confirmation.url = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions) => {
@@ -43,7 +43,7 @@ confirmation.url = (args: { id: string | number } | [id: string | number ] | str
 
 /**
 * @see \App\Http\Controllers\Admin\Subscription\SubscriptionController::confirmation
-* @see app/Http/Controllers/Admin/Subscription/SubscriptionController.php:64
+* @see app/Http/Controllers/Admin/Subscription/SubscriptionController.php:63
 * @route '/inscricao/{id}/confirmacao'
 */
 confirmation.get = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -53,7 +53,7 @@ confirmation.get = (args: { id: string | number } | [id: string | number ] | str
 
 /**
 * @see \App\Http\Controllers\Admin\Subscription\SubscriptionController::confirmation
-* @see app/Http/Controllers/Admin/Subscription/SubscriptionController.php:64
+* @see app/Http/Controllers/Admin/Subscription/SubscriptionController.php:63
 * @route '/inscricao/{id}/confirmacao'
 */
 confirmation.head = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -63,7 +63,7 @@ confirmation.head = (args: { id: string | number } | [id: string | number ] | st
 
 /**
 * @see \App\Http\Controllers\Admin\Subscription\SubscriptionController::cancel
-* @see app/Http/Controllers/Admin/Subscription/SubscriptionController.php:72
+* @see app/Http/Controllers/Admin/Subscription/SubscriptionController.php:71
 * @route '/inscricao/cancelar/{tokem}'
 */
 export const cancel = (args: { tokem: string | number } | [tokem: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -78,7 +78,7 @@ cancel.definition = {
 
 /**
 * @see \App\Http\Controllers\Admin\Subscription\SubscriptionController::cancel
-* @see app/Http/Controllers/Admin/Subscription/SubscriptionController.php:72
+* @see app/Http/Controllers/Admin/Subscription/SubscriptionController.php:71
 * @route '/inscricao/cancelar/{tokem}'
 */
 cancel.url = (args: { tokem: string | number } | [tokem: string | number ] | string | number, options?: RouteQueryOptions) => {
@@ -105,7 +105,7 @@ cancel.url = (args: { tokem: string | number } | [tokem: string | number ] | str
 
 /**
 * @see \App\Http\Controllers\Admin\Subscription\SubscriptionController::cancel
-* @see app/Http/Controllers/Admin/Subscription/SubscriptionController.php:72
+* @see app/Http/Controllers/Admin/Subscription/SubscriptionController.php:71
 * @route '/inscricao/cancelar/{tokem}'
 */
 cancel.get = (args: { tokem: string | number } | [tokem: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -115,7 +115,7 @@ cancel.get = (args: { tokem: string | number } | [tokem: string | number ] | str
 
 /**
 * @see \App\Http\Controllers\Admin\Subscription\SubscriptionController::cancel
-* @see app/Http/Controllers/Admin/Subscription/SubscriptionController.php:72
+* @see app/Http/Controllers/Admin/Subscription/SubscriptionController.php:71
 * @route '/inscricao/cancelar/{tokem}'
 */
 cancel.head = (args: { tokem: string | number } | [tokem: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'head'> => ({

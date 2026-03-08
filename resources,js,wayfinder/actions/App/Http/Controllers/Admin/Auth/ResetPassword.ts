@@ -2,7 +2,7 @@ import { queryParams, type RouteQueryOptions, type RouteDefinition } from './../
 /**
 * @see \App\Http\Controllers\Admin\Auth\ResetPassword::index
 * @see app/Http/Controllers/Admin/Auth/ResetPassword.php:16
-* @route '/admin/esquecisenha'
+* @route '/esquecisenha'
 */
 export const index = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: index.url(options),
@@ -11,13 +11,13 @@ export const index = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 
 index.definition = {
     methods: ["get","head"],
-    url: '/admin/esquecisenha',
+    url: '/esquecisenha',
 } satisfies RouteDefinition<["get","head"]>
 
 /**
 * @see \App\Http\Controllers\Admin\Auth\ResetPassword::index
 * @see app/Http/Controllers/Admin/Auth/ResetPassword.php:16
-* @route '/admin/esquecisenha'
+* @route '/esquecisenha'
 */
 index.url = (options?: RouteQueryOptions) => {
     return index.definition.url + queryParams(options)
@@ -26,7 +26,7 @@ index.url = (options?: RouteQueryOptions) => {
 /**
 * @see \App\Http\Controllers\Admin\Auth\ResetPassword::index
 * @see app/Http/Controllers/Admin/Auth/ResetPassword.php:16
-* @route '/admin/esquecisenha'
+* @route '/esquecisenha'
 */
 index.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: index.url(options),
@@ -36,7 +36,7 @@ index.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 /**
 * @see \App\Http\Controllers\Admin\Auth\ResetPassword::index
 * @see app/Http/Controllers/Admin/Auth/ResetPassword.php:16
-* @route '/admin/esquecisenha'
+* @route '/esquecisenha'
 */
 index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: index.url(options),
@@ -46,7 +46,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 /**
 * @see \App\Http\Controllers\Admin\Auth\ResetPassword::reset
 * @see app/Http/Controllers/Admin/Auth/ResetPassword.php:21
-* @route '/admin/esquecisenha'
+* @route '/esquecisenha'
 */
 export const reset = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: reset.url(options),
@@ -55,13 +55,13 @@ export const reset = (options?: RouteQueryOptions): RouteDefinition<'post'> => (
 
 reset.definition = {
     methods: ["post"],
-    url: '/admin/esquecisenha',
+    url: '/esquecisenha',
 } satisfies RouteDefinition<["post"]>
 
 /**
 * @see \App\Http\Controllers\Admin\Auth\ResetPassword::reset
 * @see app/Http/Controllers/Admin/Auth/ResetPassword.php:21
-* @route '/admin/esquecisenha'
+* @route '/esquecisenha'
 */
 reset.url = (options?: RouteQueryOptions) => {
     return reset.definition.url + queryParams(options)
@@ -70,7 +70,7 @@ reset.url = (options?: RouteQueryOptions) => {
 /**
 * @see \App\Http\Controllers\Admin\Auth\ResetPassword::reset
 * @see app/Http/Controllers/Admin/Auth/ResetPassword.php:21
-* @route '/admin/esquecisenha'
+* @route '/esquecisenha'
 */
 reset.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: reset.url(options),

@@ -2,7 +2,7 @@ import { queryParams, type RouteQueryOptions, type RouteDefinition } from './../
 /**
 * @see \App\Http\Controllers\Admin\Auth\LoginController::login
 * @see app/Http/Controllers/Admin/Auth/LoginController.php:10
-* @route '/admin'
+* @route '/'
 */
 export const login = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: login.url(options),
@@ -11,13 +11,13 @@ export const login = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 
 login.definition = {
     methods: ["get","head"],
-    url: '/admin',
+    url: '/',
 } satisfies RouteDefinition<["get","head"]>
 
 /**
 * @see \App\Http\Controllers\Admin\Auth\LoginController::login
 * @see app/Http/Controllers/Admin/Auth/LoginController.php:10
-* @route '/admin'
+* @route '/'
 */
 login.url = (options?: RouteQueryOptions) => {
     return login.definition.url + queryParams(options)
@@ -26,7 +26,7 @@ login.url = (options?: RouteQueryOptions) => {
 /**
 * @see \App\Http\Controllers\Admin\Auth\LoginController::login
 * @see app/Http/Controllers/Admin/Auth/LoginController.php:10
-* @route '/admin'
+* @route '/'
 */
 login.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: login.url(options),
@@ -36,7 +36,7 @@ login.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 /**
 * @see \App\Http\Controllers\Admin\Auth\LoginController::login
 * @see app/Http/Controllers/Admin/Auth/LoginController.php:10
-* @route '/admin'
+* @route '/'
 */
 login.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: login.url(options),

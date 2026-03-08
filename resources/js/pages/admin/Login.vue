@@ -1,7 +1,13 @@
 <script setup lang="ts">
 import Authentication_layout from '@/pages/layouts/Authentication_layout.vue';
-import { useForm } from '@inertiajs/vue3'; // agora funciona
+import { useForm, usePage } from '@inertiajs/vue3'; // agora funciona
 import { toast } from 'vue-sonner';
+
+const page = usePage()
+
+if (page.props.flash?.success) {
+    toast.success(page.props.flash.success)
+}
 
 defineOptions({layout: Authentication_layout })
 
@@ -12,7 +18,7 @@ const form = useForm({
 });
 
 const handleSubmit = () => {
-    form.post(route('admin.login.do'), {
+    form.post(route('login.do'), {
         preserveScroll: true,
         onError: (errors) => {
             for(const message of Object.values(errors)){
@@ -68,7 +74,7 @@ const handleSubmit = () => {
                                 <label for="remember"> Lembra-me</label>
                             </div>
                             <div class="text-sm">
-                                <Link :href="route('admin.password')" class="font-semibold text-indigo-400 hover:text-indigo-300">Esqueceu a senha?</Link>
+                                <Link :href="route('password')" class="font-semibold text-indigo-400 hover:text-indigo-300">Esqueceu a senha?</Link>
                             </div>
                         </div>
                     </div>
@@ -88,7 +94,7 @@ const handleSubmit = () => {
 
             <p class="mt-10 text-center text-sm/6 text-gray-400">
                 ainda não tem conta?
-                <a href="#" class="font-semibold text-indigo-400 hover:text-indigo-300">Faça seu cadastro!</a>
+                <Link :href="route('register')" class="font-semibold text-indigo-400 hover:text-indigo-300">Faça seu cadastro!</Link>
             </p>
         </div>
 </template>

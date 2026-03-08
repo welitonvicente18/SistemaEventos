@@ -17,6 +17,6 @@ class LogoutController extends Controller
     {
         Auth::logout();
         Session::regenerate();
-        return Redirect::route('admin.login')->withErrors('As credenciais não conferem');
+        return Redirect::route('login')->withErrors('As credenciais não conferem');
     }
 }

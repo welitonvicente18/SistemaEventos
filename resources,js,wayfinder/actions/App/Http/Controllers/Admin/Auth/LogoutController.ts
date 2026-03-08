@@ -2,7 +2,7 @@ import { queryParams, type RouteQueryOptions, type RouteDefinition } from './../
 /**
 * @see \App\Http\Controllers\Admin\Auth\LogoutController::__invoke
 * @see app/Http/Controllers/Admin/Auth/LogoutController.php:16
-* @route '/admin/logout'
+* @route '/logout'
 */
 const LogoutController = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: LogoutController.url(options),
@@ -11,13 +11,13 @@ const LogoutController = (options?: RouteQueryOptions): RouteDefinition<'get'> =
 
 LogoutController.definition = {
     methods: ["get","head"],
-    url: '/admin/logout',
+    url: '/logout',
 } satisfies RouteDefinition<["get","head"]>
 
 /**
 * @see \App\Http\Controllers\Admin\Auth\LogoutController::__invoke
 * @see app/Http/Controllers/Admin/Auth/LogoutController.php:16
-* @route '/admin/logout'
+* @route '/logout'
 */
 LogoutController.url = (options?: RouteQueryOptions) => {
     return LogoutController.definition.url + queryParams(options)
@@ -26,7 +26,7 @@ LogoutController.url = (options?: RouteQueryOptions) => {
 /**
 * @see \App\Http\Controllers\Admin\Auth\LogoutController::__invoke
 * @see app/Http/Controllers/Admin/Auth/LogoutController.php:16
-* @route '/admin/logout'
+* @route '/logout'
 */
 LogoutController.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: LogoutController.url(options),
@@ -36,7 +36,7 @@ LogoutController.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => 
 /**
 * @see \App\Http\Controllers\Admin\Auth\LogoutController::__invoke
 * @see app/Http/Controllers/Admin/Auth/LogoutController.php:16
-* @route '/admin/logout'
+* @route '/logout'
 */
 LogoutController.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: LogoutController.url(options),

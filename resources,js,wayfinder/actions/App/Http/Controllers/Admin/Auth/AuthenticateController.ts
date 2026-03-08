@@ -2,7 +2,7 @@ import { queryParams, type RouteQueryOptions, type RouteDefinition } from './../
 /**
 * @see \App\Http\Controllers\Admin\Auth\AuthenticateController::__invoke
 * @see app/Http/Controllers/Admin/Auth/AuthenticateController.php:14
-* @route '/admin/authenticate'
+* @route '/authenticate'
 */
 const AuthenticateController = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: AuthenticateController.url(options),
@@ -11,13 +11,13 @@ const AuthenticateController = (options?: RouteQueryOptions): RouteDefinition<'p
 
 AuthenticateController.definition = {
     methods: ["post"],
-    url: '/admin/authenticate',
+    url: '/authenticate',
 } satisfies RouteDefinition<["post"]>
 
 /**
 * @see \App\Http\Controllers\Admin\Auth\AuthenticateController::__invoke
 * @see app/Http/Controllers/Admin/Auth/AuthenticateController.php:14
-* @route '/admin/authenticate'
+* @route '/authenticate'
 */
 AuthenticateController.url = (options?: RouteQueryOptions) => {
     return AuthenticateController.definition.url + queryParams(options)
@@ -26,7 +26,7 @@ AuthenticateController.url = (options?: RouteQueryOptions) => {
 /**
 * @see \App\Http\Controllers\Admin\Auth\AuthenticateController::__invoke
 * @see app/Http/Controllers/Admin/Auth/AuthenticateController.php:14
-* @route '/admin/authenticate'
+* @route '/authenticate'
 */
 AuthenticateController.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: AuthenticateController.url(options),

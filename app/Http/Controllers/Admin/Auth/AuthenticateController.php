@@ -27,6 +27,7 @@ class AuthenticateController extends Controller
         }
 
         return Redirect::back()->withInput()
-            ->withInput($request->only('email', 'remember'));
+            ->withInput($request->only('email', 'remember'))
+            ->withErrors(['email' => 'Email ou senha inválidos']);
     }
 }

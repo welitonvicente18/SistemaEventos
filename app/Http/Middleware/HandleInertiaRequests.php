@@ -9,7 +9,7 @@ class HandleInertiaRequests extends Middleware
 {
     public function rootView(Request $request)
     {
-        if(str_contains($request->route()->getPrefix(), 'admin')) {
+        if (str_contains($request->route()->getPrefix(), 'admin')) {
             return 'admin.app';
         }
 
@@ -43,6 +43,9 @@ class HandleInertiaRequests extends Middleware
                     'name' => $request->user()->name,
                     'email' => $request->user()->email,
                 ] : null,
+            ],
+            'flash' => [
+                'success' => $request->session()->get('success'),
             ],
         ];
     }

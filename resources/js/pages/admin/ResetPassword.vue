@@ -22,7 +22,6 @@ const handleSubmit = () => {
         }
     });
 };
-
 </script>
 
 <template>
@@ -55,7 +54,7 @@ const handleSubmit = () => {
                 </div>
             </form>
             <p class="mt-10 text-center text-sm/6 text-gray-400">
-                <Link :href="route('admin.login')">
+                <Link :href="route('login')">
                     Voltar ao login
                 </Link>
             </p>
